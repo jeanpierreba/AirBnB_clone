@@ -3,7 +3,7 @@
 """ Module for the command interpreter for the console """
 
 import cmd
-from models.base_model import BaseModel
+"""from models.base_model import BaseModel"""
 
 
 class HBNBCommand(cmd.Cmd):
@@ -25,8 +25,16 @@ class HBNBCommand(cmd.Cmd):
         return True
 
     def do_create(self, line):
-        if not line:
-            print("** class name missing **")
+            """ Create a new instance of a class """
+            if not line:
+                print("** class name missing **")
+                return None
+            try:
+                new = eval(line + "()")
+                new.save()
+                print(new.id)
+            except:
+                print("** class doesn't exist**")
 
     def do_show(self, line):
         pass
