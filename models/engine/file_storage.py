@@ -41,8 +41,8 @@ class FileStorage:
                 from models.state import State
 
                 json_var = json.load(read_f)
-                for key, value in json_var.item():
-                    class_var = value["__clas__"]
+                for key, value in json_var.items():
+                    class_var = value["__class__"]
                     object_var = eval(class_var + "(**value)")
                     FileStorage.__objects[key] = object_var
         except FileNotFoundError:
