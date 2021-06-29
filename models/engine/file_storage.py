@@ -2,6 +2,7 @@
 
 """ Module for the class FileStorage to save files in a json format """
 
+from models import storage
 import json
 
 
