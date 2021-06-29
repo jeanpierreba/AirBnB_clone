@@ -3,8 +3,8 @@
 """ Model that contains the superclass """
 
 from datetime import datetime
-import uuid
-import models
+from uuid import uuid4
+from models import storage
 
 
 class BaseModel:
