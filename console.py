@@ -95,20 +95,22 @@ class HBNBCommand(cmd.Cmd):
 
     def do_update(self, line):
         args = line.split()
-        add_agrs = "{}.{}".format(args[0], args[1])
 
         if not line:
             print("** class name missing **")
         else:
             if args[0] not in classes:
                 print("** class doesn't exist **")
+                return
             elif len(args) < 2:
                 print("** instance id missing **")
-            elif add_agrs not in storage.all():
+                return
+            add_agrs = "{}.{}".format(args[0], args[1])
+            if add_agrs not in storage.all():
                 print("** no instance found **")
-            elif len(args) < 3:
+            elif len(args) == 2:
                 print("** attribute name missing **")
-            elif len(classes) < 1:
+            elif len(args) == 3:
                 print("** value missing **")
 
 
