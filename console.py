@@ -119,9 +119,9 @@ class HBNBCommand(cmd.Cmd):
                 print("** value missing **")
             elif len(args) >= 4:
                 key = args[2]
-                if key == "created_add" or key == "updated_at" or key == "id":
+                if key == "created_at" or key == "updated_at" or key == "id":
                     return
-                elif key != "created_add" or key != "updated_at" or \
+                elif key != "created_at" or key != "updated_at" or \
                         key != "id":
                     replace_quotes = args[3].replace('"', '')
                     setattr(storage.all()[add_agrs], args[2], replace_quotes)
