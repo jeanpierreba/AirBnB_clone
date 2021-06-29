@@ -2,16 +2,17 @@
 
 """ Model that contains the superclass """
 
-from datetime import datetime
-from uuid import uuid4
-from models import storage
-
 
 class BaseModel:
     """ BaseModel class definition to inherit to other classes """
 
     def __init__(self, *args, **kwargs):
         """ Class constructor """
+
+        from datetime import datetime
+        from uuid import uuid4
+        from models import storage
+
         time_format = "%Y-%m-%dT%H:%M:%S.%f"
         if kwargs:
             for key in kwargs.keys():
