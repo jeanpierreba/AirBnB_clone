@@ -48,6 +48,8 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist**")
 
     def do_show(self, line):
+        """ Prints the string representation of an
+            instance based on the class name and id"""
         if not line:
             print("** class name missing **")
         else:
@@ -64,6 +66,7 @@ class HBNBCommand(cmd.Cmd):
                     print(storage.all()[to_show])
 
     def do_destroy(self, line):
+        """ Deletes an instance based on the class name and id"""
         if not line:
             print("** class name missing **")
         else:
@@ -81,6 +84,7 @@ class HBNBCommand(cmd.Cmd):
                     storage.save()
 
     def do_all(self, line):
+        """ Printed the  name of class, if exist or not"""
         if line:
             args = line.split()
             if args[0] not in classes:
@@ -94,6 +98,7 @@ class HBNBCommand(cmd.Cmd):
             print(to_print)
 
     def do_update(self, line):
+        """ Update <class name> <id> <attribute name> <attribute value> """
         args = line.split()
 
         if not line:
@@ -112,7 +117,10 @@ class HBNBCommand(cmd.Cmd):
                 print("** attribute name missing **")
             elif len(args) == 3:
                 print("** value missing **")
-
+            elif len(args) >= 4:
+                replace_com = args[3].replace('"', '')
+                setattr(storage.all()[add_agrs], args[2], replace_com)
+                storage.all()[add_agrs].save()
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
