@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-""" Moduel that contains the superclass """
+""" Model that contains the superclass """
 
 from datetime import datetime
 from uuid import uuid4
