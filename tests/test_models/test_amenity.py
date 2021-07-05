@@ -1,16 +1,20 @@
 #!/usr/bin/python3
 """
-    Test amenity
+    This is a module test from Amenity class and your methods.
 """
 import unittest
 from models.amenity import Amenity
 
 
-class TestAmenity(unittest, TestCase):
-    """ Test """
+class TestAmenity(unittest.TestCase):
+    """
+    this class test Amenity class and your behavior
+    """
 
-    def test_amenity(self):
-        self.assertTrue(True)
+    def setUp(self):
+        self.amenity = Amenity()
 
-if __name__ == "__main__":
-    unittest.main()
+    def test_creation(self):
+        '''this test validate that creation proccess was correct.
+        '''
+        self.assertEqual(self.amenity.name, '')

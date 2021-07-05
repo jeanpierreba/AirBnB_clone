@@ -1,16 +1,20 @@
 #!/usr/bin/python3
 """
-    Test State
+    This is a module test from BaseModel class and your methods.
 """
 import unittest
 from models.state import State
 
 
-class TestState(unittest, TestCase):
-    """ Test """
+class TestState(unittest.TestCase):
+    """
+    this class test user class and your behavior
+    """
 
-    def test_state(self):
-        self.assertTrue(True)
+    def setUp(self):
+        self.state = State()
 
-if __name__ == "__main__":
-    unittest.main()
+    def test_creation(self):
+        '''this test validate that creation proccess was correct.
+        '''
+        self.assertEqual(self.State.name, '')

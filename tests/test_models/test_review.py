@@ -1,17 +1,20 @@
 #!/usr/bin/python3
 """
-    Test Review
+    This is a module test from BaseModel class and your methods.
 """
-
 import unittest
 from models.review import Review
 
 
-class TestReview(unittest, TestCase):
-    """ Test """
+class TestReview(unittest.TestCase):
+    """
+    this class test user class and your behavior
+    """
 
-    def test_review(self):
-        self.assertTrue(True)
+    def setUp(self):
+        self.review = Review()
 
-if __name__ == "__main__":
-    unittest.main()
+    def test_creation(self):
+        '''this test validate that creation proccess was correct.
+        '''
+        self.assertEqual(self.review.text, '')
