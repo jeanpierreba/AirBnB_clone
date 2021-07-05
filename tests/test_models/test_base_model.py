@@ -1,10 +1,14 @@
 #!/usr/bin/python3
-
+"""
+    Test base models
+"""
 import unittest
+import re
 from models.base_model import BaseModel
+from datetime import datetime
 
 
-class TestBaseModel(unittest, TestCase):
+class Test_BaseModel(unittest.TestCase):
     """ Test """
 
     def test_base_model(self):
@@ -93,5 +97,5 @@ class TestBaseModel(unittest, TestCase):
                 attributes[key] = value
         self.assertFalse(attributes)
 
-if __name__ == "__name__":
+if __name__ == "__main__":
     unittest.main()
