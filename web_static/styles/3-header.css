@@ -4,3 +4,12 @@ header {
 	width: 100%;
 	border-bottom: 1px solid #CCCCCC;
 }
+
+div {
+	height: 70px;
+	width: 100%;
+	background-image: url(logo.png);
+	background-repeat: no-repeat;
+	margin-left: 20px;
+	vertical-align: middle;
+}
